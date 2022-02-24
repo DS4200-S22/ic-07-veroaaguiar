@@ -196,10 +196,10 @@ CHART 2
 */
 
 // Set dimensions and margins for plots 
-const width = 900; 
-const height = 450; 
-const margin = {left:50, right:50, bottom:50, top:50}; 
-const yTooltipOffset = 15; 
+const width2 = 900; 
+const height2 = 450; 
+const margin2 = {left:50, right:50, bottom:50, top:50}; 
+const yTooltipOffset2 = 15; 
 
 
 
