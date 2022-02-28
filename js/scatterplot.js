@@ -48,8 +48,9 @@ d3.csv("data/scatter.csv").then((data) => {
 	    .data(data)
 	    .enter()
 	    .append("circle")
-	        .attr("day", (d) => xScaleS(d.day))
-	        .attr("score", (d) => yScaleS(d.score))
+	        .attr("cx", (d) => xScaleS(d.day)) 
+	        .attr("cy", (d) => yScaleS(d.score)) 
+	        .attr("r", 10)  
 
 	//add Y axis
 	svg.append("g")
