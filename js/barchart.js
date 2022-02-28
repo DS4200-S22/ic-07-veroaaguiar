@@ -203,7 +203,7 @@ const yTooltipOffset2 = 15;
 
 
 
-const svg2 = d3
+let svg2 = d3
   .select("#csv-bar")
   .append("svg")
   .attr("width", width-margin.left-margin.right)
