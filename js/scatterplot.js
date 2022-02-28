@@ -72,10 +72,10 @@ d3.csv("data/scatter.csv").then((data) => {
 
 
 	const tooltipS = d3.select("#csv-scatter") 
-                       .append("div") 
-                       .attr('id', "tooltipS") 
-                       .style("opacity", 1) 
-                       .attr("class", "tooltip"); 
+                     .append("div") 
+                     .attr('id', "tooltip") 
+                     .style("opacity", 0) 
+                     .attr("class", "tooltip"); 
 
 	// TODO: What does each line of this code do?  
 	// Using tooltip1, function creates event that occurs 
