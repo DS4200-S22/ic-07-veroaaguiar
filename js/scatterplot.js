@@ -54,8 +54,8 @@ let xScaleS = d3.scaleBand()
     .data(data)
     .enter()
     .append("circle")
-        .attr("name", (d) => { return d.day; })
-        .attr("score", (d) => { return d.score; })
+        .attr("name", (d) => xScaleS(d.x))
+        .attr("score", (d) => yScaleS(d.y))
 
 //add Y axis
 svg.append("g")
