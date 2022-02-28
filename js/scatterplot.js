@@ -25,65 +25,59 @@ let svg = d3
   .attr("viewBox", [0, 0, width, height]);
 
 
-d3.csv("data/scatter.csv").then((data) => {
+const scdata = d3.csv("data/scatter.csv").then((data) => {
 
     console.log(data); 
 
 
-    /*
 
-  Axes
-
-*/ 
+	let maxYS = d3.max(data, function(d) { return d.score; });
 
 
-let maxYS = d3.max(data, function(d) { return d.score; });
+	let yScaleS = d3.scaleLinear()
+	            .domain([0,maxYS])
+	            .range([height-margin.bottom,margin.top]); 
 
 
-let yScaleS = d3.scaleLinear()
-            .domain([0,maxYS])
-            .range([height-margin.bottom,margin.top]); 
+	let xScaleS = d3.scaleBand()
+	            .domain(d3.range(data.length))
+	            .range([margin.left, width - margin.right])
+	            .padding(0.1); 
 
+	    svg.selectAll("circle")
+	    .data(data)
+	    .enter()
+	    .append("circle")
+	        .attr("day", (d) => xScaleS(d.day))
+	        .attr("score", (d) => yScaleS(d.score))
 
-let xScaleS = d3.scaleBand()
-            .domain(d3.range(data.length))
-            .range([margin.left, width - margin.right])
-            .padding(0.1); 
-
-    svg.selectAll("circle")
-    .data(data)
-    .enter()
-    .append("circle")
-        .attr("day", (d) => xScaleS(d.day))
-        .attr("score", (d) => yScaleS(d.score))
-
-//add Y axis
-svg.append("g")
-   .attr("transform", `translate(${margin.left}, 0)`) 
-   .call(d3.axisLeft(yScaleS)) 
-   .attr("font-size", '20px'); 
+	//add Y axis
+	svg.append("g")
+	   .attr("transform", `translate(${margin.left}, 0)`) 
+	   .call(d3.axisLeft(yScaleS)) 
+	   .attr("font-size", '20px'); 
 
 
 
-//add X axis 
-svg.append("g")
-    .attr("transform", `translate(0,${height - margin.bottom})`) 
-    .call(d3.axisBottom(xScaleS) 
-            .tickFormat(i => data[i].day))  
-    .attr("font-size", '20px'); 
+	//add X axis 
+	svg.append("g")
+	    .attr("transform", `translate(0,${height - margin.bottom})`) 
+	    .call(d3.axisBottom(xScaleS) 
+	            .tickFormat(i => data[i].day))  
+	    .attr("font-size", '20px'); 
 
 
 
-svg.selectAll("circle") 
-   .data(data) 
-   .enter()  
-   .append("circle") 
-     .attr("cx", (d) => xScaleS(d.x)) 
-     .attr("cy", (d) => yScaleS(d.y)) 
-     .attr("r", 10)  
-     .on("mouseover", mouseoverS) 
-     .on("mousemove", mousemoveS)
-     .on("mouseleave", mouseleaveS);
+	svg.selectAll("circle") 
+	   .data(data) 
+	   .enter()  
+	   .append("circle") 
+	     .attr("cx", (d) => xScaleS(d.day)) 
+	     .attr("cy", (d) => yScaleS(d.score)) 
+	     .attr("r", 10)  
+	     .on("mouseover", mouseoverS) 
+	     .on("mousemove", mousemoveS)
+	     .on("mouseleave", mouseleaveS);
 
 });
 
