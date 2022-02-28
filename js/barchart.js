@@ -243,12 +243,6 @@ let xScale2 = d3.scaleBand()
         .attr("name", (d) => { return d.name; })
         .attr("score", (d) => { return d.score; })
 
-});
-
-
-
-
-
 
 svg2.append("g")
    .attr("transform", `translate(${margin.left}, 0)`) 
@@ -263,6 +257,15 @@ svg2.append("g")
     .call(d3.axisBottom(xScale1) 
             .tickFormat(i => svg2.data[i].name))  
     .attr("font-size", '20px'); 
+
+
+});
+
+
+
+
+
+
 
 
 const tooltip2 = d3.select("#csv-bar") 
