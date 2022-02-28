@@ -211,7 +211,7 @@ let svg2 = d3
   .attr("viewBox", [0, 0, width, height]);
 
 
-d3.csv("data/barchart.csv").then((data) => {
+let data2 = d3.csv("data/barchart.csv").then((data) => {
 
     console.log(data); 
 
