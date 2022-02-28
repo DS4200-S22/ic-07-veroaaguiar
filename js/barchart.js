@@ -311,7 +311,7 @@ const mouseleave2 = function(event, d) {
 // code creates a bar with all the previous functions and variables
 // used to create a final product 
 svg2.selectAll(".bar") 
-   .data(svg2.data) 
+   .data(data) 
    .enter()  
    .append("rect") 
      .attr("class", "bar") 
