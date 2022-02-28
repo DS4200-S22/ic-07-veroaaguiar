@@ -254,8 +254,8 @@ svg2.append("g")
 
 svg2.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`) 
-    .call(d3.axisBottom(xScale1) 
-            .tickFormat(i => svg2.data[i].name))  
+    .call(d3.axisBottom(xScale2) 
+            .tickFormat(i => data[i].name))  
     .attr("font-size", '20px'); 
 
 
