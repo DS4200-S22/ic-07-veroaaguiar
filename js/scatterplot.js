@@ -80,6 +80,43 @@ d3.csv("data/scatter.csv").then((data) => {
 	     .on("mousemove", mousemoveS)
 	     .on("mouseleave", mouseleaveS);
 
+
+
+
+
+
+    const tooltipS = d3.select("#csv-scatter") 
+                .append("div") 
+                .attr('id', "tooltipS") 
+                .style("opacity", 0) 
+                .attr("class", "tooltip"); 
+
+	// TODO: What does each line of this code do?  
+	// Using tooltip1, function creates event that occurs 
+	// when mouse hovers over a point 
+	// (Event: Shows the data in a rectangle))
+	const mouseoverS = function(event, d) {
+	  tooltipS.html("Day " + d.day + "<br> Score: " + d.score + "<br>") 
+	          .style("opacity", 1);  
+	}
+
+	// TODO: What does each line of this code do? 
+	// Using tooltip1, function creates event that occurs 
+	// when mouse moves over a point
+	// (Event: Keeps showing rectangle until mouse moves over certain end point)
+	const mousemoveS = function(event, d) {
+	  tooltipS.style("left", (event.x)+"px") 
+	          .style("top", (event.y + yTooltipOffsetS) +"px"); 
+	}
+
+	// TODO: What does this code do? 
+	// Using tooltip1, function creates event that occurs 
+	// when mouse hovers out of a point
+	// (Event: stops showing data rectangele)
+	const mouseleaveS = function(event, d) { 
+	  tooltipS.style("opacity", 0); 
+	}
+
 });
 
 
@@ -89,37 +126,7 @@ d3.csv("data/scatter.csv").then((data) => {
 
 
 
-const tooltipS = d3.select("#csv-scatter") 
-                .append("div") 
-                .attr('id', "tooltipS") 
-                .style("opacity", 1) 
-                .attr("class", "tooltip"); 
 
-// TODO: What does each line of this code do?  
-// Using tooltip1, function creates event that occurs 
-// when mouse hovers over a point 
-// (Event: Shows the data in a rectangle))
-const mouseoverS = function(event, d) {
-  tooltipS.html("Day " + d.day + "<br> Score: " + d.score + "<br>") 
-          .style("opacity", 1);  
-}
-
-// TODO: What does each line of this code do? 
-// Using tooltip1, function creates event that occurs 
-// when mouse moves over a point
-// (Event: Keeps showing rectangle until mouse moves over certain end point)
-const mousemoveS = function(event, d) {
-  tooltipS.style("left", (event.x)+"px") 
-          .style("top", (event.y + yTooltipOffsetS) +"px"); 
-}
-
-// TODO: What does this code do? 
-// Using tooltip1, function creates event that occurs 
-// when mouse hovers out of a point
-// (Event: stops showing data rectangele)
-const mouseleaveS = function(event, d) { 
-  tooltipS.style("opacity", 0); 
-}
 
 
 
