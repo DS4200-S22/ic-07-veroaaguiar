@@ -25,7 +25,7 @@ let svg = d3
   .attr("viewBox", [0, 0, width, height]);
 
 
-d3.csv("data/scatterplot.csv").then((data) => {
+d3.csv("data/scatter.csv").then((data) => {
 
     console.log(data); 
 
