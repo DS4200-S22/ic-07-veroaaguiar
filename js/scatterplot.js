@@ -69,23 +69,9 @@ d3.csv("data/scatter.csv").then((data) => {
 
 
 
-	svg.selectAll("circle") 
-	   .data(data) 
-	   .enter()  
-	   .append("circle") 
-	     .attr("cx", (d) => xScaleS(d.day)) 
-	     .attr("cy", (d) => yScaleS(d.score)) 
-	     .attr("r", 10)  
-	     .on("mouseover", mouseoverS) 
-	     .on("mousemove", mousemoveS)
-	     .on("mouseleave", mouseleaveS);
 
 
-
-
-
-
-    const tooltipS = d3.select("#csv-scatter") 
+	const tooltipS = d3.select("#csv-scatter") 
                 .append("div") 
                 .attr('id', "tooltipS") 
                 .style("opacity", 0) 
@@ -117,6 +103,26 @@ d3.csv("data/scatter.csv").then((data) => {
 	  tooltipS.style("opacity", 0); 
 	}
 
+
+
+
+	svg.selectAll("circle") 
+	   .data(data) 
+	   .enter()  
+	   .append("circle") 
+	     .attr("cx", (d) => xScaleS(d.day)) 
+	     .attr("cy", (d) => yScaleS(d.score)) 
+	     .attr("r", 10)  
+	     .on("mouseover", mouseoverS) 
+	     .on("mousemove", mousemoveS)
+	     .on("mouseleave", mouseleaveS);
+
+
+
+
+
+
+    c
 });
 
 
