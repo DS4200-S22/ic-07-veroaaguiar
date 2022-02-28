@@ -215,10 +215,10 @@ const svg2 = d3
 
     console.log(data); 
 
-    svg2.selectAll(".bar")
+    svg2.selectAll("bar")
     .data(data)
     .enter()
-    .append(".bar")
+    .append("bar")
         .attr("name", (d) => { return d.x; })
         .attr("score", (d) => { return d.y; })
 
