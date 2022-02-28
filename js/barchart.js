@@ -306,7 +306,7 @@ const mouseover2 = function(event, d) {
 // (Event: Keeps showing rectangle until mouse moves over certain end point)
 const mousemove2 = function(event, d) {
   tooltip2.style("left", (event.x)+"px") 
-          .style("top", (event.y + yTooltipOffset) +"px"); 
+          .style("top", (event.y + yTooltipOffset2) +"px"); 
 }
 
 // TODO: What does this code do? 
