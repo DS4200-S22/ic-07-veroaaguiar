@@ -259,6 +259,23 @@ svg2.append("g")
     .attr("font-size", '20px'); 
 
 
+
+// TODO: What does each line of this code do? 
+// code creates a bar with all the previous functions and variables
+// used to create a final product 
+svg2.selectAll(".bar") 
+   .data(data) 
+   .enter()  
+   .append("rect") 
+     .attr("class", "bar") 
+     .attr("x", (d,i) => xScale2(i)) 
+     .attr("y", (d) => yScale2(d.score)) 
+     .attr("height", (d) => (height - margin.bottom) - yScale2(d.score)) 
+     .attr("width", xScale2.bandwidth()) 
+     .on("mouseover", mouseover1) 
+     .on("mousemove", mousemove1)
+     .on("mouseleave", mouseleave1);
+
 });
 
 
@@ -299,31 +316,6 @@ const mousemove2 = function(event, d) {
 const mouseleave2 = function(event, d) { 
   tooltip2.style("opacity", 0); 
 }
-
-/* 
-
-  Bars 
-
-*/
-
-
-// TODO: What does each line of this code do? 
-// code creates a bar with all the previous functions and variables
-// used to create a final product 
-svg2.selectAll(".bar") 
-   .data(data) 
-   .enter()  
-   .append("rect") 
-     .attr("class", "bar") 
-     .attr("x", (d,i) => xScale2(i)) 
-     .attr("y", (d) => yScale2(d.score)) 
-     .attr("height", (d) => (height - margin.bottom) - yScale2(d.score)) 
-     .attr("width", xScale2.bandwidth()) 
-     .on("mouseover", mouseover1) 
-     .on("mousemove", mousemove1)
-     .on("mouseleave", mouseleave1);
-
-
 
 
 
