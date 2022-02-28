@@ -13,7 +13,7 @@ Modified: 12/08/21
 const widthS = 900; 
 const heightS = 450; 
 const marginS = {left:50, right:50, bottom:50, top:50}; 
-const yTooltipOffsetS = 15; 
+const yTooltipOffsetS = 1; 
 
 
 
@@ -54,8 +54,8 @@ let xScaleS = d3.scaleBand()
     .data(data)
     .enter()
     .append("circle")
-        .attr("name", (d) => xScaleS(d.x))
-        .attr("score", (d) => yScaleS(d.y))
+        .attr("day", (d) => xScaleS(d.day))
+        .attr("score", (d) => yScaleS(d.score))
 
 //add Y axis
 svg.append("g")
@@ -69,7 +69,7 @@ svg.append("g")
 svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`) 
     .call(d3.axisBottom(xScaleS) 
-            .tickFormat(i => data[i].name))  
+            .tickFormat(i => data[i].day))  
     .attr("font-size", '20px'); 
 
 
