@@ -57,7 +57,7 @@ let xScaleS = d3.scaleBand()
         .attr("name", (d) => { return d.day; })
         .attr("score", (d) => { return d.score; })
 
-
+//add Y axis
 svg.append("g")
    .attr("transform", `translate(${margin.left}, 0)`) 
    .call(d3.axisLeft(yScaleS)) 
@@ -65,7 +65,7 @@ svg.append("g")
 
 
 
-
+//add X axis 
 svg.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`) 
     .call(d3.axisBottom(xScaleS) 
@@ -74,9 +74,6 @@ svg.append("g")
 
 
 
-// TODO: What does each line of this code do? 
-// code creates a bar with all the previous functions and variables
-// used to create a final product 
 svg.selectAll(".scatterplot") 
    .data(data) 
    .enter()  
