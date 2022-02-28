@@ -91,8 +91,8 @@ d3.csv("data/scatter.csv").then((data) => {
 	// when mouse moves over a point
 	// (Event: Keeps showing rectangle until mouse moves over certain end point)
 	const mousemoveS = function(event, d) {
-	  tooltipS.style("left", (event.x)+"px") 
-	          .style("top", (event.y + yTooltipOffsetS) +"px"); 
+	  tooltipS.style("left", (event.day)+"px") 
+	          .style("top", (event.score + yTooltipOffsetS) +"px"); 
 	}
 
 	// TODO: What does this code do? 
