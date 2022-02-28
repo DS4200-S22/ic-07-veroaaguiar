@@ -215,6 +215,27 @@ d3.csv("data/barchart.csv").then((data) => {
 
     console.log(data); 
 
+
+    /*
+
+  Axes
+
+*/ 
+
+
+let maxY2 = d3.max(data, function(d) { return d.score; });
+
+
+let yScale2 = d3.scaleLinear()
+            .domain([0,maxY2])
+            .range([height-margin.bottom,margin.top]); 
+
+
+let xScale2 = d3.scaleBand()
+            .domain(d3.range(data.length))
+            .range([margin.left, width - margin.right])
+            .padding(0.1); 
+
     svg2.selectAll("rect")
     .data(data)
     .enter()
@@ -226,25 +247,7 @@ d3.csv("data/barchart.csv").then((data) => {
 
 
 
-/*
 
-  Axes
-
-*/ 
-
-
-let maxY2 = d3.max(svg2.data, function(d) { return d.score; });
-
-
-let yScale2 = d3.scaleLinear()
-            .domain([0,maxY2])
-            .range([height-margin.bottom,margin.top]); 
-
-
-let xScale2 = d3.scaleBand()
-            .domain(d3.range(svg2.data.length))
-            .range([margin.left, width - margin.right])
-            .padding(0.1); 
 
 
 svg2.append("g")
