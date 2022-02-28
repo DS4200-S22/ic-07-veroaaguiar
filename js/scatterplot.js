@@ -78,9 +78,8 @@ svg.selectAll("circle")
    .data(data) 
    .enter()  
    .append("circle") 
-     .attr("cx", (d) => xScale(d.x)) // use xScale to return 
-                                  // datum 
-     .attr("cy", (d) => yScale(d.y)) 
+     .attr("cx", (d) => xScaleS(d.day)) 
+     .attr("cy", (d) => yScaleS(d.score)) 
      .attr("r", 10)  
      .on("mouseover", mouseoverS) 
      .on("mousemove", mousemoveS)
