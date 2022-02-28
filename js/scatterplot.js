@@ -41,7 +41,7 @@ let maxYS = d3.max(data, function(d) { return d.score; });
 
 
 let yScaleS = d3.scaleLinear()
-            .domain([0,maxY])
+            .domain([0,maxYS])
             .range([height-margin.bottom,margin.top]); 
 
 
@@ -50,10 +50,10 @@ let xScaleS = d3.scaleBand()
             .range([margin.left, width - margin.right])
             .padding(0.1); 
 
-    svg.selectAll("rect")
+    svg.selectAll("circle")
     .data(data)
     .enter()
-    .append("rect")
+    .append("circle")
         .attr("name", (d) => { return d.day; })
         .attr("score", (d) => { return d.score; })
 
