@@ -74,7 +74,7 @@ svg.append("g")
 
 
 
-svg.selectAll(".scatterplot") 
+svg.selectAll("circle") 
    .data(data) 
    .enter()  
    .append("circle") 
