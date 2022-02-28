@@ -199,7 +199,7 @@ CHART 2
 const width2 = 900; 
 const height2 = 450; 
 const margin2 = {left:50, right:50, bottom:50, top:50}; 
-const yTooltipOffset2 = 15; 
+const yTooltipOffset2 = 2; 
 
 
 
