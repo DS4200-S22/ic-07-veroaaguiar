@@ -287,7 +287,7 @@ svg2.selectAll(".bar")
 
 const tooltip2 = d3.select("#csv-bar") 
                 .append("div") 
-                .attr('id', "tooltip1") 
+                .attr('id', "tooltip2") 
                 .style("opacity", 0) 
                 .attr("class", "tooltip"); 
 
