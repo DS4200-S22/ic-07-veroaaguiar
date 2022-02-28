@@ -71,9 +71,9 @@ d3.csv("data/scatter.csv").then((data) => {
 
 
 
-	const tooltip = d3.select("#csv-scatter") 
+	const tooltipS = d3.select("#csv-scatter") 
                      .append("div") 
-                     .attr('id', "tooltip") 
+                     .attr('id', "tooltipS") 
                      .style("opacity", 0) 
                      .attr("class", "tooltip"); 
 
@@ -106,7 +106,7 @@ d3.csv("data/scatter.csv").then((data) => {
 
 
 
-	svg.selectAll("circle") 
+    svg.selectAll("circle") 
 	   .data(data) 
 	   .enter()  
 	   .append("circle") 
