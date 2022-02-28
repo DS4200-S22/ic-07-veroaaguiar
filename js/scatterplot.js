@@ -78,11 +78,10 @@ svg.selectAll("circle")
    .data(data) 
    .enter()  
    .append("circle") 
-     .attr("class", "circle") 
-     .attr("x", (d,i) => xScaleS(i)) 
-     .attr("y", (d) => yScaleS(d.score)) 
-     .attr("height", (d) => (height - margin.bottom) - yScaleS(d.score)) 
-     .attr("width", xScaleS.bandwidth()) 
+     .attr("cx", (d) => xScale(d.x)) // use xScale to return 
+                                  // datum 
+     .attr("cy", (d) => yScale(d.y)) 
+     .attr("r", 10)  
      .on("mouseover", mouseoverS) 
      .on("mousemove", mousemoveS)
      .on("mouseleave", mouseleaveS);
