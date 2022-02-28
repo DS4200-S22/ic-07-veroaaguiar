@@ -272,9 +272,9 @@ svg2.selectAll(".bar")
      .attr("y", (d) => yScale2(d.score)) 
      .attr("height", (d) => (height - margin.bottom) - yScale2(d.score)) 
      .attr("width", xScale2.bandwidth()) 
-     .on("mouseover", mouseover1) 
-     .on("mousemove", mousemove1)
-     .on("mouseleave", mouseleave1);
+     .on("mouseover", mouseover2) 
+     .on("mousemove", mousemove2)
+     .on("mouseleave", mouseleave2);
 
 });
 
