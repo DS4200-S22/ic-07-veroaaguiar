@@ -219,8 +219,8 @@ d3.csv("data/barchart.csv").then((data) => {
     .data(data)
     .enter()
     .append("rect")
-        .attr("name", (d) => { return d.x; })
-        .attr("score", (d) => { return d.y; })
+        .attr("name", (d) => { return d.name; })
+        .attr("score", (d) => { return d.score; })
 
 });
 
