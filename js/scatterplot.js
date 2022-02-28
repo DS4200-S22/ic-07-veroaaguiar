@@ -74,7 +74,7 @@ d3.csv("data/scatter.csv").then((data) => {
 	const tooltipS = d3.select("#csv-scatter") 
                        .append("div") 
                        .attr('id', "tooltipS") 
-                       .style("opacity", 0) 
+                       .style("opacity", 1) 
                        .attr("class", "tooltip"); 
 
 	// TODO: What does each line of this code do?  
@@ -82,7 +82,7 @@ d3.csv("data/scatter.csv").then((data) => {
 	// when mouse hovers over a point 
 	// (Event: Shows the data in a rectangle))
 	const mouseoverS = function(event, d) {
-	  tooltipS.html("Day " + d.day + "<br> Score: " + d.score + "<br>") 
+	      tooltipS.html("Day " + d.day + "<br> Score: " + d.score + "<br>") 
 	          .style("opacity", 1);  
 	}
 
