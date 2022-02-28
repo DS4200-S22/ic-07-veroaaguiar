@@ -242,7 +242,7 @@ let yScale2 = d3.scaleLinear()
 
 
 let xScale2 = d3.scaleBand()
-            .domain(d3.range(data2.length))
+            .domain(d3.range(svg2.data.length))
             .range([margin.left, width - margin.right])
             .padding(0.1); 
 
@@ -258,7 +258,7 @@ svg2.append("g")
 svg2.append("g")
     .attr("transform", `translate(0,${height - margin.bottom})`) 
     .call(d3.axisBottom(xScale1) 
-            .tickFormat(i => data1[i].name))  
+            .tickFormat(i => svg2.data[i].name))  
     .attr("font-size", '20px'); 
 
 
@@ -305,7 +305,7 @@ const mouseleave2 = function(event, d) {
 // code creates a bar with all the previous functions and variables
 // used to create a final product 
 svg2.selectAll(".bar") 
-   .data(data2) 
+   .data(svg2.data) 
    .enter()  
    .append("rect") 
      .attr("class", "bar") 
