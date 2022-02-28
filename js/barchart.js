@@ -211,14 +211,14 @@ let svg2 = d3
   .attr("viewBox", [0, 0, width, height]);
 
 
-let data2 = d3.csv("data/barchart.csv").then((data) => {
+d3.csv("data/barchart.csv").then((data) => {
 
     console.log(data); 
 
-    svg2.selectAll("bar")
+    svg2.selectAll("rect")
     .data(data)
     .enter()
-    .append("bar")
+    .append("rect")
         .attr("name", (d) => { return d.x; })
         .attr("score", (d) => { return d.y; })
 
@@ -233,7 +233,7 @@ let data2 = d3.csv("data/barchart.csv").then((data) => {
 */ 
 
 
-let maxY2 = d3.max(data2, function(d) { return d.score; });
+let maxY2 = d3.max(svg2.data, function(d) { return d.score; });
 
 
 let yScale2 = d3.scaleLinear()
