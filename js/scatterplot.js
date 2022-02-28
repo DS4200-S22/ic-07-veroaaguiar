@@ -13,7 +13,7 @@ Modified: 12/08/21
 const widthS = 900; 
 const heightS = 450; 
 const marginS = {left:50, right:50, bottom:50, top:50}; 
-const yTooltipOffsetS = 1; 
+const yTooltipOffsetS = 3; 
 
 
 
@@ -92,7 +92,7 @@ d3.csv("data/scatter.csv").then((data) => {
 const tooltipS = d3.select("#csv-scatter") 
                 .append("div") 
                 .attr('id', "tooltipS") 
-                .style("opacity", 0) 
+                .style("opacity", 1) 
                 .attr("class", "tooltip"); 
 
 // TODO: What does each line of this code do?  
