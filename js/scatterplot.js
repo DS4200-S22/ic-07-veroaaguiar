@@ -13,7 +13,7 @@ Modified: 12/08/21
 const widthS = 900; 
 const heightS = 450; 
 const marginS = {left:50, right:50, bottom:50, top:50}; 
-const yTooltipOffsetS = 3; 
+const yTooltipOffsetS = 15; 
 
 
 
