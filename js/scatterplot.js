@@ -122,7 +122,7 @@ d3.csv("data/scatter.csv").then((data) => {
 
 
 
-    c
+    
 });
 
 
