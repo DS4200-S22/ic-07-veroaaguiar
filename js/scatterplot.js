@@ -77,29 +77,21 @@ d3.csv("data/scatter.csv").then((data) => {
                      .style("opacity", 0) 
                      .attr("class", "tooltip"); 
 
-	// TODO: What does each line of this code do?  
-	// Using tooltip1, function creates event that occurs 
-	// when mouse hovers over a point 
-	// (Event: Shows the data in a rectangle))
-	const mouseover = function(event, d) {
+
+
+	const mouseoverS = function(event, d) {
 	      tooltipS.html("Day " + d.day + "<br> Score: " + d.score + "<br>") 
 	          .style("opacity", 1);  
 	}
 
-	// TODO: What does each line of this code do? 
-	// Using tooltip1, function creates event that occurs 
-	// when mouse moves over a point
-	// (Event: Keeps showing rectangle until mouse moves over certain end point)
+	
 	const mousemoveS = function(event, d) {
 	  tooltipS.style("left", (event.day)+"px") 
 	          .style("top", (event.score + yTooltipOffsetS) +"px"); 
 	}
 
-	// TODO: What does this code do? 
-	// Using tooltip1, function creates event that occurs 
-	// when mouse hovers out of a point
-	// (Event: stops showing data rectangele)
-	const mouseleave = function(event, d) { 
+
+	const mouseleaveS = function(event, d) { 
 	  tooltipS.style("opacity", 0); 
 	}
 
@@ -113,9 +105,9 @@ d3.csv("data/scatter.csv").then((data) => {
 	     .attr("cx", (d) => xScaleS(d.day)) 
 	     .attr("cy", (d) => yScaleS(d.score)) 
 	     .attr("r", 10)  
-	     .on("mouseover", mouseover) 
+	     .on("mouseover", mouseoverS) 
 	     .on("mousemove", mousemoveS)
-	     .on("mouseleave", mouseleave);
+	     .on("mouseleave", mouseleaveS);
 
 
 
